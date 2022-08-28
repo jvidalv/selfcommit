@@ -10,13 +10,13 @@ const { title, data, url } = Astro.props;
     >
       {title}
     </h3>
-    <ul class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-6">
+    <ul class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5">
       {
         data.map(({ title, icon, url }) => (
           <li>
             <a class="flex flex-col items-center gap-2" href={url}>
               <Icon class="h-12" name={icon} />
-              <span>{title}</span>
+              <span class="text-center">{title}</span>
             </a>
           </li>
         ))

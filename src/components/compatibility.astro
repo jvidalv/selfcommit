@@ -4,85 +4,42 @@ import CompatibilityList from "~/components/compatibility-list.astro";
 
 const frameworks = [
   {
-    title: "React",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
+    title: "Linkedin",
+    icon: "mdi:linkedin",
+    url: "https://linkedin.com",
   },
   {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
+    title: "Github",
+    icon: "mdi:github",
+    url: "https://github.com/",
   },
   {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: "Stack Overflow",
+    icon: "mdi:stackoverflow",
+    url: "https://stackoverflow.com/",
   },
   {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
+    title: "Web personal",
+    icon: "mdi:globe",
+    url: "https://selfcommit.dev/",
   },
   {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
-  },
-];
-
-const platforms = [
-  {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
-  },
-  {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
-  },
-  {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
-  },
+    title: "Curriculum Vitae",
+    icon: "mdi:file-pdf-box",
+    url: "#",
+  }
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Validaciones" id="validaciones">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    Selfcommit <span class="text-primary">valida</span> que cumplas todos los 
+    requisitos mínimos para unas <span class="text-primary">mejores oportunidades</span> en el mercado laboral.
+
   </Fragment>
   <CompatibilityList
-    title="Frameworks"
+    title="Validaciones"
     data={frameworks}
-    url="https://docs.astro.build/core-concepts/framework-components/"
-  />
-  <CompatibilityList
-    title="Platforms"
-    data={platforms}
-    url="https://docs.astro.build/guides/deploy/"
+    url="#todo"
   />
 </ContentSection>
