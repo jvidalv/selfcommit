@@ -23,7 +23,7 @@ const links = [
 
 <footer class="h-64  bg-gray-800">
   <div class="flex container mx-auto pt-24 justify-between">
-      <p class="text-sm">© Selfcommit.dev</p>
+      <p class="text-sm text-white">© Selfcommit.dev</p>
       <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
         {
           links.map((link) => (
@@ -33,7 +33,7 @@ const links = [
                 href={link.url}
               >
                 <span class="sr-only">{link.description}</span>
-                <Icon class="h-full" name={link.icon} />
+                <Icon class="h-full text-white" name={link.icon} />
               </a>
             </li>
           ))
