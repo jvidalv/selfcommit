@@ -38,7 +38,7 @@ const Splash = () => (
         width={500}
         height={500}
         xmlns="http://www.w3.org/2000/svg"
-        className="filter grayscale-[0.8] hover:grayscale-0 transition-all duration-300"
+        className="hidden sm:block filter grayscale-[0.8] hover:grayscale-0 transition-all duration-300"
       >
         s
         <path

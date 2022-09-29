@@ -6,9 +6,7 @@ import { FaCheckCircle } from 'react-icons/fa'
 
 import Container from 'components/container'
 import Footer from 'components/pages/index/footer'
-import Intro from 'components/pages/index/intro'
 import Splash from 'components/pages/index/splash'
-import Validations from 'components/pages/index/validations'
 
 const Home: NextPage = () => {
   return (
@@ -47,7 +45,7 @@ const Home: NextPage = () => {
                   .
                 </p>
               </div>
-              <div className="mt-12 grid grid-cols-2 gap-12">
+              <div className="mt-12 grid sm:grid-cols-2 gap-12">
                 <div>
                   <h2 className="font-bold text-lg">¿Cómo te ayudaremos?</h2>
                   <p className="text-gray-gray-700 mt-4 text-sm relative">
@@ -101,7 +99,7 @@ const Home: NextPage = () => {
                   .
                 </p>
               </div>
-              <div className="mt-12 grid grid-cols-2 gap-12">
+              <div className="mt-12 grid sm:grid-cols-2 gap-12">
                 <div className="text-gray-gray-700 flex items-center justify-center">
                   <Link href="/visibility-test" passHref>
                     <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-blue-700 hover:to-indigo-700">
@@ -133,7 +131,7 @@ const Home: NextPage = () => {
                 alt="Go To Discord"
                 className="relative bg-slate-300 border border-gray-200 rounded-lg px-16 py-8 hover:rotate-1 transition-all duration-300"
               >
-                <div className="absolute flex items-center justify-center rounded-full -top-5 -right-5 bg-slate-700 p-4 shadow-lg">
+                <div className="absolute flex items-center justify-center rounded-full top-2 right-2 sm:-top-5 sm:-right-5 bg-slate-700 p-4 shadow-lg">
                   <BsDiscord className="w-8 h-8 text-white" />
                 </div>
                 <div className="space-y-4">
@@ -141,7 +139,7 @@ const Home: NextPage = () => {
                     Conécta con nuestra comunidad y siéntete acompañado en tu
                     proceso de crecimiento
                   </h3>
-                  <div className="flex grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-500 rounded-lg p-4 space-y-3">
                       <p className="text-white font-bold">
                         Nuestra misión espacial
@@ -176,7 +174,7 @@ const Home: NextPage = () => {
             <div className="pt-12 sm:pt-16 lg:pt-20">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
-                  <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+                  <h2 className="text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
                     Pricing
                   </h2>
                 </div>
