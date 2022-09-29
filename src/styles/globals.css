@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html,
+  #__next,
+  body {
+    height: 100%;
+  }
+
+  html {
+    --color-primary: #ec4899;
+    --color-secondary: #6366f1;
+    --color-text: #111827;
+    --color-text-offset: #4b5563;
+    --color-background: #f9fafb;
+    --color-background-offset: #f3f4f6;
+    --color-border: rgb(17 24 39/0.1); /* gray.900 */
+  }
+
+  a,
+  .btn {
+    @apply transition-colors duration-200;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text;
+    @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  }
+
+  .fixed-header {
+    @apply fixed top-0 bottom-auto;
+    @apply text-default bg-default border-default;
+  }
+
+  .modal.is-open {
+    @apply block;
+  }
+
+  #open-nav-button {
+    @apply hidden;
+  }
+}
