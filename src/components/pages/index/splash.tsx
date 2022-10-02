@@ -1,15 +1,16 @@
+import paths from 'navigation/paths'
+import Link from 'next/link'
+
 import Container from 'components/container'
-import Header from 'components/pages/index/header'
 import Starfield from 'components/pages/index/starfield'
 
 const Splash = () => (
-  <section className="relative h-full bg-black">
+  <section className="relative min-h-screen flex items-center justify-center h-full bg-black -mt-24">
     <Starfield />
-    <Header />
     <Container className="-mt-16 flex relative container grid h-full sm:grid-cols-2 place-items-center">
       <div>
         <h2 className="flex flex-col gap-2 sm:gap-4 sm:self-auto sm:justify-self-end">
-          <div className="font-extrabold tracking-tighter text-left text-6xl gradient-text">
+          <div className="font-extrabold tracking-tighter text-left text-6xl text-white">
             Comprométete
             <br /> con tu desarrollo profesional
           </div>
@@ -18,18 +19,11 @@ const Splash = () => (
           De desarrolladores para desarrolladores
         </p>
         <div className="space-x-4 mt-6">
-          <a
-            href="#"
-            className="rounded-md border border-white bg-transparent bg-origin-border px-4 py-3 text-white text-sm hover:text-primary hover:border-primary"
-          >
-            Encontrar un mejor empleo
-          </a>
-          <a
-            href="#"
-            className="rounded-md border border-white bg-transparent bg-origin-border px-4 py-3 text-white text-sm hover:text-primary hover:border-primary"
-          >
-            Crecer en la empresa que trabajo
-          </a>
+          <Link href={paths.form} passHref>
+            <a className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm">
+              Encontrar mi empleo soñado
+            </a>
+          </Link>
         </div>
       </div>
       <svg

@@ -1,3 +1,4 @@
+import paths from 'navigation/paths'
 import { BsDiscord } from 'react-icons/bs'
 import { FaRocket } from 'react-icons/fa'
 
@@ -35,7 +36,7 @@ const Intro = () => (
   >
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <a
-        href="https://discord.gg/grHerHNz"
+        href={paths.discord}
         className="flex items-center justify-center gap-3 px-4 py-3 border-2 border-current rounded-md hover:text-secondary"
       >
         <BsDiscord className="h-8" />

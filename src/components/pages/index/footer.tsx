@@ -1,3 +1,4 @@
+import paths from 'navigation/paths'
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const links = [
@@ -7,7 +8,7 @@ const links = [
     icon: FaGithub
   },
   {
-    url: 'https://discord.gg/grHerHNz',
+    url: paths.discord,
     description: 'Selfcommit en Discord',
     icon: FaDiscord
   },
