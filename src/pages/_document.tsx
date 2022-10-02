@@ -34,7 +34,7 @@ class MyDocument extends Document {
             name="description"
             content="Incrementa tu alcance como desarrollador y llega hasta la luna!"
           />
-          <link rel="icon" href="/favicon.png" />
+          <link rel="icon" href="/favicon.ico" />
           <meta property="og:title" content="Selfcommit" />
           <meta property="og:type" content="website" />
           <meta property="og:description" content={description} />

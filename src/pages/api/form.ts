@@ -5,7 +5,6 @@ const SLACK_TOKEN_ID =
   'xoxb-4160038189685-4160045244917-LddQZj2Oqsnp5kjYAh8tzQXg'
 
 const web = new WebClient(SLACK_TOKEN_ID)
-const currentTime = new Date().toTimeString()
 
 export default async function handler(
   req: NextApiRequest,
@@ -30,7 +29,7 @@ export default async function handler(
         type: 'header',
         text: {
           type: 'plain_text',
-          text: `🚀 New lead - ${currentTime}`
+          text: `🚀 New lead`
         }
       },
       {
@@ -50,7 +49,9 @@ export default async function handler(
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `*Linkedin*\n<${data.linkedin}|Linkedin>`
+          text: data.linkedin
+            ? `*Linkedin*\n<${data.linkedin}|Linkedin>`
+            : '*Linkedin*\n-'
         }
       },
       {
@@ -82,11 +83,18 @@ export default async function handler(
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `*¿Cual es tu empleo soñado?*\n${data.dream}`
+          text: `*¿Cual es tu empleo soñado?*\n${data.dream || ''}`
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: '----------------------------------------'
         }
       }
     ]
   })
 
-  res.status(200)
+  res.status(200).json({})
 }
