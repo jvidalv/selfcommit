@@ -1,13 +1,92 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { WebClient } from '@slack/web-api'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  name: string
-}
+const SLACK_TOKEN_ID =
+  'xoxb-4160038189685-4160045244917-LddQZj2Oqsnp5kjYAh8tzQXg'
 
-export default function handler(
+const web = new WebClient(SLACK_TOKEN_ID)
+const currentTime = new Date().toTimeString()
+
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const data = req.body as {
+    'first-name': string
+    'last-name': string
+    email: string
+    linkedin: string
+    prev: boolean
+    reason: string
+    experience: string
+    dream: string
+  }
+
+  await web.chat.postMessage({
+    channel: '#mvp',
+    text: `🚀 New lead - ${data['first-name'] + ' ' + data['last-name']}`,
+    blocks: [
+      {
+        type: 'header',
+        text: {
+          type: 'plain_text',
+          text: `🚀 New lead - ${currentTime}`
+        }
+      },
+      {
+        type: 'section',
+        fields: [
+          {
+            type: 'mrkdwn',
+            text: `*Name*\n${data['first-name'] + ' ' + data['last-name']}`
+          },
+          {
+            type: 'mrkdwn',
+            text: `*Email*\n${data.email}`
+          }
+        ]
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*Linkedin*\n<${data.linkedin}|Linkedin>`
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*¿Estas trabajando actualmente como developer?*\n${
+            data.prev ? 'Si' : 'No'
+          }`
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*¿Por que razón quieres formar parte de Selfcommit?*\n${data.reason}`
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*¿Cuantos años de experiencia tienes como developer?*\n${
+            data.experience || 0
+          }`
+        }
+      },
+      {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*¿Cual es tu empleo soñado?*\n${data.dream}`
+        }
+      }
+    ]
+  })
+
+  res.status(200)
 }

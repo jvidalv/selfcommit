@@ -1,8 +1,7 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useRef, useState } from 'react'
 
 import paths from 'navigation/paths'
 import Head from 'next/head'
-import Script from 'next/script'
 
 import useScript from 'hooks/useScript'
 
@@ -14,6 +13,7 @@ const Form = () => {
     'calendely',
     'https://assets.calendly.com/assets/external/widget.js'
   )
+  const form = useRef<HTMLFormElement>(null)
   const [prev, setPrev] = useState<boolean>()
   const [success, setSuccess] = useState<boolean>(false)
 
@@ -27,11 +27,11 @@ const Form = () => {
           <div className={success ? 'block' : 'hidden'}>
             <div>
               <h2 className="text-xl font-semibold leading-6 text-gray-900">
-                Agendar cita
+                Gracias por querer formar parte de Selfcommit!
               </h2>
               <p className="mt-1 text-sm text-gray-500 max-w-3xl">
-                Si quieres agendar una cita, puedes hacerlo directamente desde
-                esta pantalla.
+                Ahora, si quieres agendar una cita, puedes hacerlo directamente
+                desde esta pantalla.
               </p>
             </div>
             <div className="mt-8 border border-1 rounded-lg">
@@ -49,9 +49,26 @@ const Form = () => {
             </div>
           </div>
           <form
+            ref={form}
             className={success ? 'hidden' : 'block'}
-            onSubmit={e => {
+            onSubmit={async e => {
               e.preventDefault()
+              const data = new FormData(form.current!)
+              // console.log(JSON.stringify(Object.fromEntries(data)))
+              const res = await fetch('/api/form', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  ...Object.fromEntries(data),
+                  prev
+                })
+              })
+              if (!res.ok) {
+                // handle error
+                return
+              }
               setSuccess(true)
             }}
           >
@@ -241,7 +258,7 @@ const Form = () => {
             )}
             {prev !== undefined && (
               <div className="grid grid-cols-6 mt-12">
-                <div className="col-span-3">
+                <div className="col-span-6 md:col-span-3">
                   <button
                     type="submit"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm"
