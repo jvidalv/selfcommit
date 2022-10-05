@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { BsDiscord } from 'react-icons/bs'
 import { FaCheckCircle } from 'react-icons/fa'
+import { trackClick } from 'utils/mixpanel'
 
 import Container from 'components/container'
 import Layout from 'components/layout'
@@ -55,20 +56,22 @@ const Home = () => {
                   necesidades y darte algunos tips para empezar.
                 </p>
                 <p className="text-gray-gray-700 mt-4 text-sm ">
-                  <strong>2.</strong> Si te hemos aportado valor hasta el
-                  momento y quieres continuar con nuestras sesiones de coaching,
-                  tan solo tendrás que agendar una nueva reunión.
+                  <strong>2.</strong> Continua con nuestras sesiones de
+                  coaching, tan solo tendrás que agendar una nueva reunión.
                 </p>
                 <p className="text-gray-gray-700 mt-4 text-sm ">
-                  <strong>3.</strong> De igual manera te aportaremos material
-                  que te ayudará a saber qué hacer con mayor presición. ¡Únete a
-                  nuestra comunidad donde tu coach y la comunidad podrán
-                  resolver cualquier duda que tengas!
+                  <strong>3.</strong> Ayúdate de igual manera con nuestro
+                  material para saber que hacer con mayor precisión. ¡Únete a
+                  nuestra comunidad donde tu coach y la comunidad podrá resolver
+                  cualquier duda que tengas!
                 </p>
               </div>
               <div className="text-gray-gray-700 flex items-center justify-center">
                 <Link href={paths.form} passHref>
-                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm">
+                  <a
+                    onClick={() => trackClick('reunirme_con_un_mentor')}
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm"
+                  >
                     Reunirme con un mentor
                   </a>
                 </Link>
@@ -97,7 +100,10 @@ const Home = () => {
             <div className="mt-12 grid sm:grid-cols-2 gap-12">
               <div className="text-gray-gray-700 flex items-center justify-center">
                 <Link href={paths.form} passHref>
-                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-primary to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm">
+                  <a
+                    onClick={() => trackClick('unirme_a_la_comunidad')}
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-primary to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm"
+                  >
                     Unirme a la comunidad
                   </a>
                 </Link>
@@ -108,7 +114,7 @@ const Home = () => {
                   <strong>1.</strong> Únete a nuestra comunidad de discord.
                 </p>
                 <p className="text-gray-gray-700 mt-4 text-sm ">
-                  <strong>2.</strong> Escribenos en el chat privado que estás
+                  <strong>2.</strong> Escríbenos en el chat privado que estás
                   interesado en desarrollarte más en tu empresa actual.
                 </p>
                 <p className="text-gray-gray-700 mt-4 text-sm ">
@@ -130,10 +136,10 @@ const Home = () => {
               </div>
               <div className="space-y-4">
                 <h3 className="font-bold text-slate-800 text-xl max-w-4xl">
-                  Conécta con nuestra comunidad y siéntete acompañado en tu
+                  Conecta con nuestra comunidad y siéntete acompañado en tu
                   proceso de crecimiento
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-slate-500 rounded-lg p-4 space-y-3">
                     <p className="text-white font-bold">
                       Nuestra misión espacial
@@ -150,13 +156,16 @@ const Home = () => {
                     </p>
                     <p className="text-gray-100 text-sm">
                       - PR, no de Pull Request sino de Pasión y Reto. <br /> -
-                      Mergear solo contenido basado en respeto.
-                      <br /> - Conectar con nuestra API: Aprendizaje continuo,
+                      Mergea sólo contenido basado en respeto.
+                      <br /> - Conecta con nuestra API: Aprendizaje continuo,
                       Perseverancia e Integridad.
                     </p>
                   </div>
                 </div>
-                <button className="flex w-full items-center justify-center rounded-md border border-transparent bg-white bg-origin-border px-4 py-2 font-medium shadow-sm">
+                <button
+                  onClick={() => trackClick('unirme_a_la_comunidad')}
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-white bg-origin-border px-4 py-2 font-medium shadow-sm"
+                >
                   Unirme a la comunidad
                 </button>
               </div>
@@ -221,7 +230,7 @@ const Home = () => {
                   </div>
                   <div className="bg-gray-50 py-8 px-6 text-center lg:flex lg:flex-shrink-0 lg:flex-col lg:justify-center lg:p-12">
                     <p className="text-lg font-medium leading-6 text-gray-900">
-                      Primera sessión
+                      Primera sesión
                     </p>
                     <div className="mt-4 flex items-center justify-center text-4xl font-bold tracking-tight text-gray-900">
                       <span>Gratis</span>
@@ -231,17 +240,19 @@ const Home = () => {
                         href="#"
                         className="font-medium text-gray-500 underline"
                       >
-                        Aprende mas sobre nuestra politica para miembros
+                        Aprende más sobre nuestra política para miembros
                       </a>
                     </p>
                     <div className="mt-6">
                       <div className="rounded-md shadow">
-                        <a
-                          href="#"
-                          className="flex w-full items-center justify-center rounded-sm border border-transparent bg-origin-border bg-primary px-4 py-2 text-base font-medium text-white shadow-sm"
-                        >
-                          Empezar Ya
-                        </a>
+                        <Link href={paths.form} passHref>
+                          <a
+                            onClick={() => trackClick('empezar_ya')}
+                            className="flex w-full items-center justify-center rounded-sm border border-transparent bg-origin-border bg-primary px-4 py-2 text-base font-medium text-white shadow-sm"
+                          >
+                            Empezar Ya
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

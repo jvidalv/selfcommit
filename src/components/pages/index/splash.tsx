@@ -1,5 +1,6 @@
 import paths from 'navigation/paths'
 import Link from 'next/link'
+import { trackClick } from 'utils/mixpanel'
 
 import Container from 'components/container'
 import Starfield from 'components/pages/index/starfield'
@@ -20,7 +21,10 @@ const Splash = () => (
         </p>
         <div className="space-x-4 mt-6">
           <Link href={paths.form} passHref>
-            <a className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm">
+            <a
+              onClick={() => trackClick('formar_parte')}
+              className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm"
+            >
               Encontrar mi empleo soñado
             </a>
           </Link>

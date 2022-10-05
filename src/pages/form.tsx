@@ -2,6 +2,7 @@ import { ReactElement, useRef, useState } from 'react'
 
 import paths from 'navigation/paths'
 import Head from 'next/head'
+import { trackClick } from 'utils/mixpanel'
 
 import useScript from 'hooks/useScript'
 
@@ -54,7 +55,7 @@ const Form = () => {
             onSubmit={async e => {
               e.preventDefault()
               const data = new FormData(form.current!)
-              // console.log(JSON.stringify(Object.fromEntries(data)))
+              trackClick('agendar_reunion')
               const res = await fetch('/api/form', {
                 method: 'POST',
                 headers: {

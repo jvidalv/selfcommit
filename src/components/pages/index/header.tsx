@@ -5,6 +5,7 @@ import paths from 'navigation/paths'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { trackClick } from 'utils/mixpanel'
 
 import Container from 'components/container'
 
@@ -45,7 +46,10 @@ const Header = () => {
           {!isForm && (
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <Link href={paths.form} passHref>
-                <a className="text-sm ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-origin-border bg-primary px-3 py-0.5 font-medium text-white shadow-sm">
+                <a
+                  onClick={() => trackClick('formar_parte')}
+                  className="text-sm ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-origin-border bg-primary px-3 py-0.5 font-medium text-white shadow-sm"
+                >
                   Formar parte
                 </a>
               </Link>
@@ -101,7 +105,10 @@ const Header = () => {
                 {!isForm && (
                   <div className="mt-6">
                     <Link href={paths.form}>
-                      <a className="flex w-full items-center justify-center rounded-sm border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">
+                      <a
+                        onClick={() => trackClick('formar_parte')}
+                        className="flex w-full items-center justify-center rounded-sm border border-transparent bg-gradient-to-r from-purple-600 to-primary bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
+                      >
                         Formar parte
                       </a>
                     </Link>
