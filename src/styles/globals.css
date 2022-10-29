@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  html {
+    @apply bg-black font-mono
+  }
+
   html,
   #__next,
   body {
@@ -21,7 +25,7 @@
 
   a,
   .btn {
-    @apply transition-colors duration-200;
+    @apply hover:underline transition-colors duration-200;
   }
 
   .gradient-text {

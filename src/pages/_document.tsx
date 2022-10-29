@@ -1,35 +1,13 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
-const description =
-  'Incrementa tu alcance como desarrollador y llega hasta la luna!'
+const description = 'Comprométete con tu desarrollo profesional.'
 
 class MyDocument extends Document {
   render() {
     return (
       <Html className="motion-safe:scroll-smooth">
         <Head>
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
-            media="print"
-          />
-          <noscript>
-            <link
-              rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
-            />
-          </noscript>
           <Script
             strategy="lazyOnload"
             dangerouslySetInnerHTML={{
