@@ -1,10 +1,7 @@
 import { WebClient } from '@slack/web-api'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const SLACK_TOKEN_ID =
-  'xoxb-4160038189685-4160045244917-LddQZj2Oqsnp5kjYAh8tzQXg'
-
-const web = new WebClient(SLACK_TOKEN_ID)
+const web = new WebClient(process.env.NEXT_PUBLIC_SLACK_TOKEN_ID)
 
 export default async function handler(
   req: NextApiRequest,

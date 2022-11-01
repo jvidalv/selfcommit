@@ -2,10 +2,6 @@ import { ReactElement, useRef, useState } from 'react'
 
 import paths from 'navigation/paths'
 import Head from 'next/head'
-import Link from 'next/link'
-import { BsDiscord } from 'react-icons/bs'
-import { FaCheckCircle } from 'react-icons/fa'
-import { trackClick } from 'utils/mixpanel'
 
 import Container from 'components/container'
 import Layout from 'components/layout'
