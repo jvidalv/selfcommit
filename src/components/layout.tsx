@@ -10,7 +10,7 @@ const Layout = (props: HTMLProps<HTMLDivElement>) => {
   return (
     <div className="h-full">
       <Header />
-      <main className="min-h-screen text-base text-default selection:bg-secondary selection:text-white">
+      <main className="min-h-screen bg-red-500 text-base text-default selection:bg-secondary selection:text-white">
         {props.children}
       </main>
       <Footer />
