@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Container from 'components/container'
 import Layout from 'components/layout'
 
-const Home = () => {
+const LinkedinPage = () => {
   const form = useRef<HTMLFormElement>(null)
   const [success, setSuccess] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
@@ -14,20 +14,18 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Selfcommit.</title>
+        <title>Linkedin - Selfcommit.</title>
       </Head>
       <Container className="mt-12">
         <div className="max-w-2xl">
           <h1 className="text-5xl text-white font-bold">
-            <span className="text-primary animate-pulse">Developer</span>,
-            comprométete con tu{' '}
-            <span className="text-primary">desarrollo profesional</span>
+            <span className="text-primary animate-pulse">Developer</span>, el
+            perfil de Linkedin que <span className="text-primary">gusta</span>,
+            sin necesidad de invertir más tiempo
           </h1>
           <p className="mt-4 text-gray-400 text-lg">
-            Nuestro framework analiza tus aptitudes, experiencia y marca
-            personal, y lo potencia para que incrementes las posibilidades de
-            alcanzar tus{' '}
-            <span className="text-gray-200">objetivos profesionales</span>.
+            Tu perfil de Linkedin debería ser tu principal activo, no un desafio
+            constante.
           </p>
         </div>
         <form
@@ -36,7 +34,7 @@ const Home = () => {
             e.preventDefault()
             setLoading(true)
             const data = new FormData(form.current!)
-            const res = await fetch('/api/email', {
+            const res = await fetch('/api/linkedin', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -85,24 +83,23 @@ const Home = () => {
             ) : (
               <>
                 <label
-                  htmlFor="email"
+                  htmlFor="linkedin"
                   className="block text-xs text-gray-200 sr-only"
                 >
-                  Correo electrónico
+                  Linkedin
                 </label>
                 <div>
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
+                    id="linkedin"
+                    name="linkedin"
+                    type="text"
                     className="bg-black border-gray-900 w-full text-xl text-white border-primary focus:border-primary"
-                    placeholder="tu@email.com"
+                    placeholder="https://www.linkedin.com/in/tu-nombre/"
                     required
                   />
                 </div>
                 <button className="bg-gray-600 text-gray-300 text-xl w-full hover:bg-primary transition px-2 py-1 mt-4">
-                  Empezar {loading && '...'}
+                  Mejorar {loading && '...'}
                 </button>
               </>
             )}
@@ -113,8 +110,8 @@ const Home = () => {
   )
 }
 
-Home.getLayout = (page: ReactElement) => {
+LinkedinPage.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>
 }
 
-export default Home
+export default LinkedinPage

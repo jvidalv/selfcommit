@@ -6,7 +6,10 @@ const description = 'Comprométete con tu desarrollo profesional.'
 class MyDocument extends Document {
   render() {
     return (
-      <Html className="motion-safe:scroll-smooth">
+      <Html
+        className="motion-safe:scroll-smooth dark"
+        style={{ colorScheme: 'dark' }}
+      >
         <Head>
           <Script
             strategy="lazyOnload"
@@ -29,7 +32,7 @@ class MyDocument extends Document {
           <meta property="og:description" content={description} />
           <meta
             property="og:image"
-            content="https://selfcommit.dev/social.jpg"
+            content="https://selfcommit.dev/social.png"
           />
           <meta property="og:url" content="https://selfcommit.dev/" />
           <meta name="twitter:card" content="summary_large_image" />

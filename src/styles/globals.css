@@ -7,12 +7,6 @@
     @apply bg-black font-mono
   }
 
-  html,
-  #__next,
-  body {
-    height: 100%;
-  }
-
   html {
     --color-primary: #ff0068;
     --color-secondary: #6366f1;
