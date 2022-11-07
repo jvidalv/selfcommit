@@ -12,6 +12,7 @@ class MyDocument extends Document {
       >
         <Head>
           <Script
+            id="mixpanel-selfcommit"
             strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `

@@ -98,7 +98,7 @@ const AboutUsPage = () => {
               <p className="mt-1 text-gray-400">{charge}</p>
               <div className="flex mt-auto gap-4">
                 {networks.map(({ name, href, ...props }) => (
-                  <a key={name} href={href} target="_blank">
+                  <a key={name} href={href} target="_blank" rel="noreferrer">
                     <p className="sr-none w-0">{name}</p>
                     <props.icon className="text-gray-400 w-6 h-6" />
                   </a>

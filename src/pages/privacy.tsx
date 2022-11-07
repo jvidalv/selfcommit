@@ -18,8 +18,8 @@ const PrivacyPolicyPage = () => {
         </Container>
       </div>
       <Container className="mt-16 prose prose-invert pb-16">
-        <ReactMarkdown
-          children={`
+        <ReactMarkdown>
+          {`
 ### Información al usuario
 
 **Selfcommit**, en adelante RESPONSABLE, es el Responsable del tratamiento delos datos personales del Usuario y le informa que estos datos serán tratados de conformidad con lo dispuesto en el Reglamento (UE) 2016/679 de 27 de abril de 2016 (GDPR) relativo a la protección delas personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, por lo que se le facilita la siguiente información del tratamiento:
@@ -54,7 +54,7 @@ Que de conformidad con lo dispuesto en las normativas vigentes en protección de
 
 El RESPONSABLE garantiza que ha implementado políticas técnicas y organizativas apropiadas para aplicar las medidas de seguridad que establecen el GDPR con el fin de proteger los derechos y libertades de los Usuarios y les ha comunicado la información adecuada para que puedan ejercerlos.
             `}
-        />
+        </ReactMarkdown>
       </Container>
     </>
   )

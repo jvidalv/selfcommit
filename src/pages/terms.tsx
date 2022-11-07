@@ -18,8 +18,8 @@ const TermsPage = () => {
         </Container>
       </div>
       <Container className="mt-16 prose prose-invert pb-16">
-        <ReactMarkdown
-          children={`
+        <ReactMarkdown>
+          {`
 Selfcommit, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE N º 166, así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.
 
 Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.
@@ -58,7 +58,7 @@ Los servidores del sitio web podrán detectar de manera automática la direcció
 
 Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales más cercanos a MADRID.
         `}
-        />
+        </ReactMarkdown>
       </Container>
     </>
   )
