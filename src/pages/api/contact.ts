@@ -8,12 +8,27 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const data = req.body as {
-    linkedin: string
+    message: string
+    email: string
   }
 
   await web.chat.postMessage({
     channel: '#mvp',
-    text: `🚀 New lead - ${data.linkedin}`
+    blocks: [
+      {
+        type: 'section',
+        text: { type: 'plain_text', text: `💬 Contact: ${data.email}` }
+      },
+      {
+        type: 'context',
+        elements: [
+          {
+            type: 'plain_text',
+            text: data.message
+          }
+        ]
+      }
+    ]
   })
 
   res.status(200).json({})

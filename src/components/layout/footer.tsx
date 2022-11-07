@@ -50,7 +50,7 @@ const resources = {
 const company = {
   title: 'Empresa',
   links: [
-    // { href: paths.contact, name: 'Contacto' },
+    { href: paths.contact, name: 'Contacto' },
     { href: paths.aboutUs, name: 'Sobre nosotros' },
     { href: paths.blog, name: 'Blog' }
   ]

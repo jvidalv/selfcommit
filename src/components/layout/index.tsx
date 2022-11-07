@@ -1,7 +1,7 @@
 import { HTMLProps } from 'react'
 
-import Footer from 'components/pages/footer'
-import Header from 'components/pages/header'
+import Footer from 'components/layout/footer'
+import Header from 'components/layout/header'
 
 const Layout = (props: HTMLProps<HTMLDivElement>) => {
   return (

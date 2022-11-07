@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 
 import { Post, allPosts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
@@ -38,31 +39,33 @@ const BlogPostPage = ({ post }: { post: Post }) => {
         <Container className="h-full flex flex-col justify-center">
           <time
             dateTime={post.date}
-            className="flex items-center space-x-2 text-gray-400"
+            className="flex items-center space-x-2 text-gray-400 capitalize"
           >
-            <span>{format(parseISO(post.date), 'LLLL d, yyyy')}</span>
+            {format(parseISO(post.date), 'LLLL d, yyyy', { locale: es })}
           </time>
           <h1 className="text-white text-5xl mt-2">{post.title}</h1>
         </Container>
       </div>
-      <Container className="grid grid-cols-10 gap-8">
-        <div className="col-span-7 border-r pr-12 border-gray-900">
+      <Container className="grid grid-cols-10 gap-8 min-h-screen">
+        <div className="col-span-7 border-r pr-12 min-h-full border-gray-900">
           <article
             className="prose max-w-none prose-invert py-8"
             dangerouslySetInnerHTML={{ __html: post.body.html }}
           />
         </div>
         <div className="col-span-3 py-8">
-          <div className="text-lg text-gray-600">Autores</div>
-          <div className="space-y-2 mt-4">
-            {post.authors.map(author => (
-              <div
-                key={author.name}
-                className="flex items-center space-x-2 text-gray-400"
-              >
-                <span>{author.name}</span>
-              </div>
-            ))}
+          <div className="sticky top-12">
+            <div className="text-lg text-gray-600">Autores</div>
+            <div className="space-y-2 mt-4">
+              {post.authors.map(author => (
+                <div
+                  key={author.name}
+                  className="flex items-center space-x-2 text-gray-400"
+                >
+                  <span>{author.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

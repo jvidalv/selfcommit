@@ -13,7 +13,7 @@ export default async function handler(
 
   await web.chat.postMessage({
     channel: '#mvp',
-    text: `🚀 New lead - ${data['email']}`
+    text: `🚀 New lead - ${data.email}`
   })
 
   res.status(200).json({})

@@ -1,34 +1,74 @@
 import { ReactElement } from 'react'
 
 import Head from 'next/head'
+import Image from 'next/image'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 import Container from 'components/container'
 import Layout from 'components/layout'
 
 const team = [
   {
+    name: 'Josep Vidal',
+    charge: 'Senior frontend engineer',
+    photo: '/team/josep.jpg',
+    networks: [
+      {
+        name: 'Github',
+        href: 'https://github.com/jvidalv',
+        icon: FaGithub
+      },
+      {
+        name: 'Linkedin',
+        href: 'https://es.linkedin.com/in/josepvidalvidal',
+        icon: FaLinkedin
+      }
+    ]
+  },
+  {
     name: 'Andres Villamizar',
     charge: 'CPO y Senior Product Manager',
-    photo: '/team/andres.jpg'
+    photo: '/team/andres.jpg',
+    networks: [
+      {
+        name: 'Linkedin',
+        href: 'https://es.linkedin.com/in/cvandresvillamizar',
+        icon: FaLinkedin
+      }
+    ]
   },
   {
     name: 'Antonio Arenapulido',
     charge: 'Senior DevOps engineer',
-    photo: '/team/antonio.png'
+    photo: '/team/antonio.png',
+    networks: [
+      {
+        name: 'Github',
+        href: 'https://github.com/antonioarenzanapulido',
+        icon: FaGithub
+      },
+      {
+        name: 'Linkedin',
+        href: 'https://es.linkedin.com/in/antonio-arenzana-pulido/en',
+        icon: FaLinkedin
+      }
+    ]
   },
   {
     name: 'José David García',
     charge: 'Senior Product Manager ',
-    photo: '/team/jose.jpg'
-  },
-  {
-    name: 'Josep Vidal',
-    charge: 'Senior frontend engineer',
-    photo: '/team/josep.jpg'
+    photo: '/team/jose.jpg',
+    networks: [
+      {
+        name: 'Linkedin',
+        href: 'https://es.linkedin.com/in/josedavidgarciafernandez',
+        icon: FaLinkedin
+      }
+    ]
   }
 ]
 
-const TermsPage = () => {
+const AboutUsPage = () => {
   return (
     <>
       <Head>
@@ -40,21 +80,30 @@ const TermsPage = () => {
         </Container>
       </div>
       <Container className="mt-16 pb-16">
-        <p className="my-16 text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <div className="grid grid-cols-4 gap-8">
-          {team.map(({ photo, name, charge }) => (
-            <div key={name} className="bg-gray-900 p-4">
-              <img className="w-full" src={photo} alt={name} />
-              <h2 className="text-2xl text-white mt-4">{name}</h2>
+        <h2 className="text-2xl my-16 text-gray-300">
+          Somos un equipo multidisciplinar enfocado 100% a desarrollo y producto
+          en el mundo IT.
+        </h2>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map(({ photo, name, charge, networks }) => (
+            <div key={name} className="bg-gray-900 p-4 flex flex-col  ">
+              <Image
+                width={250}
+                height={250}
+                className="w-full"
+                src={photo}
+                alt={name}
+              />
+              <h3 className="text-xl text-white mt-4">{name}</h3>
               <p className="mt-1 text-gray-400">{charge}</p>
+              <div className="flex mt-auto gap-4">
+                {networks.map(({ name, href, ...props }) => (
+                  <a key={name} href={href} target="_blank">
+                    <p className="sr-none w-0">{name}</p>
+                    <props.icon className="text-gray-400 w-6 h-6" />
+                  </a>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -63,8 +112,8 @@ const TermsPage = () => {
   )
 }
 
-TermsPage.getLayout = (page: ReactElement) => {
+AboutUsPage.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>
 }
 
-export default TermsPage
+export default AboutUsPage
