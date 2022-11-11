@@ -18,7 +18,7 @@ const ContactPage = () => {
         </Container>
       </div>
       <Container className="mt-16 pb-16">
-        <h2 className="text-4xl my-16 text-gray-300">
+        <h2 className="text-xl my-16 text-gray-300">
           Ubicados entre Barcelona y Madrid - <br />{' '}
           <span className="text-primary">100%</span> remoto,{' '}
           <span className="text-primary">100%</span> internacionales.

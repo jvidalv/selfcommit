@@ -25,22 +25,10 @@ const Header = () => {
           </div>
           <div className="space-x-10">
             <Link
-              href={paths.aboutUs}
+              href={paths.build}
               className="font-medium text-gray-300 hover:text-primary"
             >
-              Sobre nosotros
-            </Link>
-            <Link
-              href={paths.linkedin}
-              className="font-medium text-gray-300 hover:text-primary"
-            >
-              Mejorador de Linkedin
-            </Link>
-            <Link
-              href={paths.blog}
-              className="font-medium text-gray-300 hover:text-primary"
-            >
-              Blog
+              Construye la plataforma con nosotros
             </Link>
           </div>
         </Container>
@@ -75,6 +63,12 @@ const Header = () => {
               </div>
               <div className="py-6 px-5">
                 <div className="hidden grid grid-cols-2 gap-4">
+                  <Link
+                    href={paths.build}
+                    className="font-medium text-gray-300 hover:text-primary"
+                  >
+                    Construye la plataforma con nosotros
+                  </Link>
                   <Link
                     href={paths.aboutUs}
                     className="font-medium text-gray-300 hover:text-primary"

@@ -80,7 +80,7 @@ const AboutUsPage = () => {
         </Container>
       </div>
       <Container className="mt-16 pb-16">
-        <h2 className="text-2xl my-16 text-gray-300">
+        <h2 className="text-lg my-16 text-gray-300">
           Somos un equipo multidisciplinar enfocado 100% a desarrollo y producto
           en el mundo IT.
         </h2>

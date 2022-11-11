@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.0",
     "@heroicons/react": "^1.0.6",
+    "@notionhq/client": "^2.2.2",
     "@slack/web-api": "^6.7.2",
     "@types/formidable": "^2.0.5",
     "clsx": "^1.2.1",

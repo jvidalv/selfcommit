@@ -35,7 +35,10 @@ const links = [
 
 const features = {
   title: 'Producto',
-  links: [{ href: paths.linkedin, name: 'Validador de Linkedin' }]
+  links: [
+    { href: paths.linkedin, name: 'Mejorar tu Linkedin' },
+    { href: paths.build, name: 'Construir juntos Selfcommit.' }
+  ]
 }
 
 const resources = {

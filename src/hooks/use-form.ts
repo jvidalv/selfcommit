@@ -1,6 +1,8 @@
 import { FormEvent, useCallback, useRef, useState } from 'react'
 
-const useForm = (apiEndpoint: 'email' | 'linkedin' | 'contact') => {
+const useForm = (
+  apiEndpoint: 'email' | 'linkedin' | 'contact' | 'newsletter'
+) => {
   const form = useRef<HTMLFormElement>(null)
   const [success, setSuccess] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)

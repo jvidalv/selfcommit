@@ -1,7 +1,8 @@
 import { WebClient } from '@slack/web-api'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { addRowInNotion } from 'utils/notion'
 
-const web = new WebClient(process.env.NEXT_PUBLIC_SLACK_TOKEN_ID)
+const web = new WebClient(process.env.SLACK_TOKEN_ID)
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,6 +11,15 @@ export default async function handler(
   const data = req.body as {
     email: string
   }
+
+  await addRowInNotion({
+    Email: {
+      email: data.email
+    },
+    Source: {
+      multi_select: [{ name: 'Homepage' }]
+    }
+  })
 
   await web.chat.postMessage({
     channel: '#mvp',
