@@ -15,16 +15,16 @@ import Layout from 'components/layout'
 
 const bulletPoints = [
   {
-    text: 'Selfcommit será contruída en directo a través de Twitch y tú podrás participar dándonos feedback en tiempo real.'
+    text: 'Selfcommit será contruída en directo a través de Twitch, y tú podrás participar dándonos feedback en tiempo real.'
   },
   {
-    text: 'No solo código. El equipo de fundadores junto a ti y la comunidad, estaremos tomando decisiones de negocio, producto y diseño. Esto te aportará un gran conocimiento en variables que te llevarán a otro nivel como desarrollador. De igual manera estarás viviendo el procesos de desarrollo de una startup desde 0.'
+    text: 'No solo código. También el equipo de fundadores y la comunidad junto a ti estaremos tomando decisiones de negocio, producto y diseño. Esto te aportará un gran conocimiento en variables que te llevarán a otro nivel como desarrollador.'
   },
   {
     text: 'En tiempo real estaremos solucionando cualquier tipo de duda que tengas acerca del mundo del desarrollo de producto.'
   },
   {
-    text: 'Somos un equipo de Software Engineers y Product Managers con años de experiencia. Esperamos aportarte mucho valor al igual que aprender de ti.'
+    text: 'Somos un equipo de Software Engineers y Product Managers con años de experiencia cuyo objetivo es crear una comunidad sana que se divierta y aprenda a crear una startup desde cero.'
   }
 ]
 
@@ -40,7 +40,7 @@ const BuildPage = () => {
         <div className="max-w-3xl">
           <h1 className="text-5xl text-white font-bold">
             <span className="text-primary animate-pulse">Developer</span>, te
-            gustaría formar parte del proceso de creación del producto de{' '}
+            gustaría formar parte del proceso de creación de{' '}
             <span className="text-primary">Selfcommit</span>?
           </h1>
           <p className="mt-6 text-gray-400">
@@ -76,8 +76,8 @@ const BuildPage = () => {
                   ¿Te suena genial?
                 </div>
                 <label htmlFor="email" className="block mt-2 text-gray-300">
-                  Puedes suscribirte compartiendo tu email para que te enviemos
-                  notificaciones antes de cada sesión.
+                  Compartenos tu email para que te avisemos antes de cada
+                  sesión.
                 </label>
                 <input
                   id="email"
@@ -89,7 +89,7 @@ const BuildPage = () => {
                 />
               </div>
               <button className="bg-primary text-gray-300 text-xl w-full px-2 py-1 mt-4">
-                Subscribirse {loading && '...'}
+                Subscribirme {loading && '...'}
               </button>
               <small className="block mt-4 text-gray-400">
                 *Tambien puedes subscribirte{' '}
