@@ -23,12 +23,24 @@ const Header = () => {
               <FaBars className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <div className="space-x-10">
+          <div className="space-x-8">
             <Link
-              href={paths.build}
+              href={paths.linkedin}
               className="font-medium text-gray-300 hover:text-primary"
             >
-              Construye la plataforma con nosotros
+              Mejora tu Linkedin
+            </Link>
+            <Link
+              href={paths.aboutUs}
+              className="font-medium text-gray-300 hover:text-primary"
+            >
+              Sobre nosotros
+            </Link>
+            <Link
+              href={paths.build}
+              className="px-2 py-1 bg-primary text-white font-semibold text-gray-300"
+            >
+              Construye con nosotros
             </Link>
           </div>
         </Container>
@@ -79,7 +91,7 @@ const Header = () => {
                     href={paths.linkedin}
                     className="font-medium text-gray-300 hover:text-primary"
                   >
-                    Mejorador de Linkedin
+                    Mejora tu Linkedin
                   </Link>
                   <Link
                     href={paths.blog}
