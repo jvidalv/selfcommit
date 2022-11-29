@@ -22,6 +22,21 @@ module.exports = {
       },
       borderColor: {
         default: 'var(--color-border)'
+      },
+      animation: {
+        jump: 'jump 1s infinite',
+        'from-top': 'fromTop .5s'
+      },
+      keyframes: {
+        jump: {
+          '0%': { transform: 'translateY(0)' },
+          '20%': { transform: 'translateY(-10px)' },
+          '40%': { transform: 'translateY(0)' }
+        },
+        fromTop: {
+          '0%': { transform: 'translateY(-15px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 }
+        }
       }
     }
   }

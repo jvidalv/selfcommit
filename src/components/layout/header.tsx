@@ -17,13 +17,13 @@ const Header = () => {
               Selfcommit.
             </Link>
           </div>
-          <div className="-my-2 -mr-2 hidden md:hidden">
+          <div className="-my-2 -mr-2 block md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-200 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <FaBars className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <div className="space-x-8">
+          <div className="hidden md:block space-x-8">
             <Link
               href={paths.linkedin}
               className="font-medium text-gray-300 hover:text-primary"
@@ -55,13 +55,13 @@ const Header = () => {
         >
           <Popover.Panel
             focus
-            className="hidden absolute inset-x-0 top-0 z-30 origin-top-right transform p-2 transition md:hidden"
+            className="absolute inset-x-0 top-0 z-30 origin-top-right transform p-2 transition md:hidden"
           >
-            <div className="divide-y-2 divide-gray-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="divide-y-2 divide-gray-800  border border-gray-800 rounded-lg bg-black shadow-lg ring-1 ring-black ring-opacity-5">
               <div className="px-5 pt-5 pb-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Link href="/" className="font-bold text-xl text-black">
+                    <Link href="/" className="font-bold text-xl text-white">
                       Selfcommit.
                     </Link>
                   </div>
@@ -74,12 +74,12 @@ const Header = () => {
                 </div>
               </div>
               <div className="py-6 px-5">
-                <div className="hidden grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <Link
-                    href={paths.build}
+                    href={paths.linkedin}
                     className="font-medium text-gray-300 hover:text-primary"
                   >
-                    Construye la plataforma con nosotros
+                    Mejora tu Linkedin
                   </Link>
                   <Link
                     href={paths.aboutUs}
@@ -88,16 +88,10 @@ const Header = () => {
                     Sobre nosotros
                   </Link>
                   <Link
-                    href={paths.linkedin}
-                    className="font-medium text-gray-300 hover:text-primary"
+                    href={paths.build}
+                    className="px-2 py-1 bg-primary text-white font-semibold text-gray-300"
                   >
-                    Mejora tu Linkedin
-                  </Link>
-                  <Link
-                    href={paths.blog}
-                    className="font-medium text-gray-300 hover:text-primary"
-                  >
-                    Blog
+                    Construye
                   </Link>
                 </div>
               </div>

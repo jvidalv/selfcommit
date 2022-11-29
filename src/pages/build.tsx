@@ -51,7 +51,10 @@ const BuildPage = () => {
         <div className="grid gap-6 mt-8 max-w-4xl">
           <div className="h-[1px] bg-primary w-1/6 opacity-50" />
           {bulletPoints.map(({ text }, index) => (
-            <div key={index} className="sm:flex items-start gap-4">
+            <div
+              key={index}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
               <div>
                 <div className="flex items-center justify-center border border-primary h-10 w-10 text-primary">
                   {index + 1}

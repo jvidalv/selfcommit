@@ -80,7 +80,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {footerLinks.map((links, index) => (
             <div key={index}>
               <h3 className="text-white">{links.title}</h3>
